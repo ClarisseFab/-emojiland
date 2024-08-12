@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Emojis</h1>
+
+<div id="emojis">
+  <% @emojis.each do |emoji| %>
+    <%= render emoji %>
+    <p>
+      <%= link_to "Show this emoji", emoji %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New emoji", new_emoji_path %>
