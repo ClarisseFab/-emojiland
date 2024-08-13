@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -19,9 +19,9 @@
             <%= link_to "My bookings", "/bookings", class: "nav-link" %>
             </li>
           </ul>
-          <div class="nav-item dropdown">
+          <div class="nav-item dropdown border rounded border-grey btn btn-secondary">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+              <%= current_user.last_name[0].capitalize + "." + current_user.first_name[0].capitalize%>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# <%= link_to "Action", "#", class: "dropdown-item" %>
