@@ -6,14 +6,17 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @emoji = Emoji.find(params[:emoji_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.emoji = Emoji.find(params[:emoji_id])
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to emoji_url(@emoji), notice: "Booking was successfully created." }
+        format.html { redirect_to bookings_path, notice: "Emoji was successfully booked." }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,6 +42,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:name, :description, :price, :user_id)
+      params.require(:booking).permit(:date_start_on, :date_end_on)
     end
 end

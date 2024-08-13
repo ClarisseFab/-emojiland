@@ -1,28 +1,23 @@
 <div id="<%= dom_id emoji %>">
-  <p>
-    <strong>Name:</strong>
-    <%= emoji.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= emoji.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= emoji.price  %>
-    <%= "€" %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= emoji.user_id %>
-    <%# <%= emoji.user.first_name %>
-  </p>
-
-  <% if emoji.picture.attached? %>
-    <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-
+  <h2 class="text-center"><strong><%= emoji.name %></strong></h2>
+  <div class="d-flex justify-content-center">
+    <p><% if emoji.picture.attached? %>
+      <%= cl_image_tag emoji.picture.key, height: 200, width: 200, crop: :fill %>
+    <% end %></p>
+  </div>
+  <div>
+    <p>
+      <strong>Description:</strong>
+      <%= emoji.description %>
+    </p>
+  </div>
+  <div class="d-flex justify-content-between">
+    <p>
+      <strong>User:</strong>
+      <%= emoji.user.first_name %>
+    </p>
+    <p>
+      <strong><%= emoji.price %><%= "€" %></strong>
+    </p>
+  </div>
 </div>
