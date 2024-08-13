@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
   devise_for :users
 
+  # # creation de routes pour USERS/SHOW
+  # get "users/show/", to: "users#show"
+
   root to: "pages#home"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
