@@ -4,7 +4,8 @@
 
 <div>
   <%= link_to "Edit this emoji", edit_emoji_path(@emoji) %> |
-  <%= link_to "Back to emojis", emojis_path %>
+  <%= link_to "Back to emojis", emojis_path %> |
+    <%= link_to "Book this emoji", new_emoji_booking_path(@emoji) %>
 
   <%= button_to "Destroy this emoji", @emoji, method: :delete %>
 </div>
