@@ -3,8 +3,13 @@
 <%= render @emoji %>
 
 <div>
-  <%# <%= button_to "Edit", edit_emoji_path(@emoji), method: :get %>
-  <%# <%= button_to "Destroy this emoji", @emoji, method: :delete %>
-
-  <%= button_to "Back", emojis_path, method: :get %>
+  <%= link_to "Back to emojis", emojis_path, class:"btn btn-primary" %>
 </div>
+
+
+<%# <%= button_to "Edit", edit_emoji_path(@emoji), method: :get %>
+<%# <%= link_to "Edit this emoji", edit_emoji_path(@emoji) %>
+
+<%# <%= button_to "Destroy this emoji", @emoji, method: :delete %>
+
+<%# <%= button_to "Back", emojis_path, method: :get %>

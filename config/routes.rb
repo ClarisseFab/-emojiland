@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # creation de routes pour USERS/SHOW
-  get "users/:id", to: "users#show", as: :my_emojis
-
+  get "my_emojis", to: "users#my_emojis"
   root to: "emojis#index"
 
 

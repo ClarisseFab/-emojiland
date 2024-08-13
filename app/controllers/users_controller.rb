@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  def show
-    set_user
+  def my_emojis
+    @user = current_user
   end
 
   private
