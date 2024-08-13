@@ -1,4 +1,10 @@
 <p style="color: green"><%= notice %></p>
+
+
+<%= render @emoji %>
+
+<%= link_to "Back to emojis", emojis_path, class:"btn btn-primary" %>
+
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-center col-3">
     <div class="d-flex flex-column border border-dark rounded p-3">
@@ -13,4 +19,13 @@
       </div>
     </div>
   </div>
+
 </div>
+
+
+<%# <%= button_to "Edit", edit_emoji_path(@emoji), method: :get %>
+<%# <%= link_to "Edit this emoji", edit_emoji_path(@emoji) %>
+
+<%# <%= button_to "Destroy this emoji", @emoji, method: :delete %>
+
+<%# <%= button_to "Back", emojis_path, method: :get %>
