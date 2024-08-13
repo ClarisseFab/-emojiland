@@ -18,12 +18,16 @@ usertest = User.create!(
 p "Creating 10 new emojis... 🔄"
 
 10.times do
-  Emoji.create!(
+  emoji = Emoji.new(
     name: Faker::JapaneseMedia::OnePiece.character,
     description: Faker::Lorem.paragraph,
     price: Faker::Commerce.price,
     user: usertest
   )
+
+  file = URI.open(Faker::LoremFlickr.image)
+  emoji.picture.attach(io: file, filename: "nes.png", content_type: "image/png")
+  emoji.save!
 end
 
 p "Finished! 👏"
