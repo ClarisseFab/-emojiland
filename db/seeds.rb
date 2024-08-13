@@ -11,8 +11,8 @@ p "Creating a new user test... 🔄"
 usertest = User.create!(
   email: "test@test.com",
   password: "123456",
-  last_name: Toto,
-  first_name: Tata
+  last_name: "Toto",
+  first_name: "Tata"
 )
 
 p "Creating 10 new emojis... 🔄"
