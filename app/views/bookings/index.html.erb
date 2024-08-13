@@ -1,2 +1,28 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>My Bookings</h1>
+<p>Tous mes bookings en cours</p>
+
+
+<% current_user.bookings.each do |booking| %>
+  <p>
+    <strong>Name:</strong>
+    <%= booking.emoji.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= booking.emoji.description %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= (booking.emoji.price * (booking.date_end_on - booking.date_start_on)).round(2) %>
+  </p>
+
+  <% if booking.emoji.picture.attached? %>
+    <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <p>
+  <strong>Period:</strong>
+    <%= booking.date_start_on%>
+    <%= booking.date_end_on%>
+  </p>
+<% end %>
