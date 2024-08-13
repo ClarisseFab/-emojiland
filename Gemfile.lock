@@ -131,7 +131,8 @@ GEM
     error_highlight (0.6.0)
     erubi (1.13.0)
     execjs (2.9.1)
-
+    faker (3.4.2)
+      i18n (>= 1.8.11, < 2)
     faraday (2.10.1)
       faraday-net_http (>= 2.0, < 3.2)
       logger
@@ -141,10 +142,6 @@ GEM
       multipart-post (~> 2)
     faraday-net_http (3.1.1)
       net-http
-
-    faker (3.4.2)
-      i18n (>= 1.8.11, < 2)
-
     ffi (1.17.0)
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-darwin)

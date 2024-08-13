@@ -1,19 +1,21 @@
 require 'faker'
 
-p "Desroying users ... 💀"
+p "Destroying users... 💀"
 User.destroy_all
 
-p "Desroying all emojis ... 💀"
+p "Destroying all emojis... 💀"
 Emoji.destroy_all
 
-p "Creating a new user test ... 🔄"
+p "Creating a new user test... 🔄"
 
 usertest = User.create!(
   email: "test@test.com",
-  password: "123456"
+  password: "123456",
+  last_name: Toto,
+  first_name: Tata
 )
 
-p "Creating 10 new emojis ... 🔄"
+p "Creating 10 new emojis... 🔄"
 
 10.times do
   Emoji.create!(
