@@ -26,4 +26,12 @@ p "Creating 10 new emojis... 🔄"
   )
 end
 
+# test à enlever
+Emoji.create!(
+  name: Faker::JapaneseMedia::OnePiece.character,
+  description: Faker::Lorem.paragraph,
+  price: Faker::Commerce.price,
+  user: usertest
+)
+
 p "Finished! 👏"

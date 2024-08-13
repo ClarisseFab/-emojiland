@@ -1,5 +1,5 @@
 <h1> My emojis</h1>
-
+<%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
 
 <% current_user.emojis.each do |emoji| %>
 <div >
@@ -21,10 +21,18 @@
 
 <%# mettre image ici %>
   <p>
-    <% "mettre image ici" %>
+    <% if emoji.picture.attached? %>
+    <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   </p>
-
 </div>
 <br>
 
+<%= link_to "Edit", edit_emoji_path(emoji), class:"btn btn-primary"  %>
+<%# <%= link_to "Destroy this emoji", emoji , method: :delete, class:"btn btn-primary" %>
+<%= button_to "Destroy this emoji", emoji, method: :delete %>
 <% end %>
+
+<%# <div>
+  <%= link_to "Back", emojis_path, class:"btn btn-primary" %>
+<%# </div> %>
