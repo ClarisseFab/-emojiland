@@ -21,4 +21,8 @@
     <%# <%= emoji.user.first_name %>
   </p>
 
+  <% if emoji.picture.attached? %>
+    <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
 </div>

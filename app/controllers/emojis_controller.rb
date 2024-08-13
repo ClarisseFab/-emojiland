@@ -67,6 +67,6 @@ class EmojisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def emoji_params
-      params.require(:emoji).permit(:name, :description, :price, :user_id)
+      params.require(:emoji).permit(:name, :description, :price, :user_id, :picture)
     end
 end

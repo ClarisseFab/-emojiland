@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   # creation de routes pour USERS/SHOW
   get "users/:id", to: "users#show", as: :my_emojis
 
-  root to: "pages#home"
+  root to: "emojis#index"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
