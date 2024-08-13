@@ -7,7 +7,6 @@
   </div>
   <div>
     <p>
-
       <strong>Description:</strong>
       <%= emoji.description %>
     </p>
@@ -15,11 +14,10 @@
   <div class="d-flex justify-content-between">
     <p>
       <strong>User:</strong>
-      <%= emoji.user_id %>
+      <%# <%= emoji.user.first_name %>
     </p>
-
     <p>
-      <%= emoji.price %><strong>$</strong>
+      <strong><%= emoji.price %><%= "€" %></strong>
     </p>
   </div>
 </div>

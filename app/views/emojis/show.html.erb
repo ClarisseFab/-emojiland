@@ -6,6 +6,7 @@
       <div class="d-flex justify-content-between">
         <%= link_to "Edit", edit_emoji_path(@emoji) %>
         <%= link_to "Delete", @emoji, method: :delete %>
+         <%= link_to "Book this emoji", new_emoji_booking_path(@emoji) %>
       </div>
       <div class="d-flex justify-content-center">
         <%= link_to "Back to emojis", emojis_path %>
