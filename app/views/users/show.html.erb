@@ -1,0 +1,31 @@
+<h1> My emojis</h1>
+
+<%= link_to "New emoji +", new_emoji_path, class: "btn btn-primary mb-2" %>
+
+<% current_user.emojis.each do |emoji| %>
+<div >
+  <p>
+    <strong>Name:</strong>
+    <%= emoji.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= emoji.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= emoji.price  %>
+    <%= "€" %>
+  </p>
+
+<%# mettre image ici %>
+  <p>
+    <% "mettre image ici" %>
+  </p>
+
+</div>
+<br>
+
+<% end %>

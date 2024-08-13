@@ -11,12 +11,14 @@
 
   <p>
     <strong>Price:</strong>
-    <%= emoji.price %>
+    <%= emoji.price  %>
+    <%= "€" %>
   </p>
 
   <p>
     <strong>User:</strong>
     <%= emoji.user_id %>
+    <%# <%= emoji.user.first_name %>
   </p>
 
   <% if emoji.picture.attached? %>
