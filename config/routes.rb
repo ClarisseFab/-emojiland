@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'user/show'
   resources :emojis do
     resources :bookings, only: [:new, :create]
   end
@@ -6,8 +8,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
   devise_for :users
 
-  # # creation de routes pour USERS/SHOW
-  # get "users/show/", to: "users#show"
+  # creation de routes pour USERS/SHOW
+  get "users/:id", to: "users#show", as: :my_emojis
 
   root to: "pages#home"
 

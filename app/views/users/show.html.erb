@@ -1,4 +1,8 @@
-<div id="<%= dom_id emoji %>">
+<h1> My emojis</h1>
+
+
+<% current_user.emojis.each do |emoji| %>
+<div >
   <p>
     <strong>Name:</strong>
     <%= emoji.name %>
@@ -15,10 +19,12 @@
     <%= "€" %>
   </p>
 
+<%# mettre image ici %>
   <p>
-    <strong>User:</strong>
-    <%= emoji.user_id %>
-    <%# <%= emoji.user.first_name %>
+    <% "mettre image ici" %>
   </p>
 
 </div>
+<br>
+
+<% end %>
