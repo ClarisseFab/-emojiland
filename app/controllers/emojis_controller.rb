@@ -15,10 +15,6 @@ class EmojisController < ApplicationController
     @emoji = Emoji.new
   end
 
-  # GET /emojis/1/edit
-  def edit
-  end
-
   # POST /emojis or /emojis.json
   def create
     @emoji = Emoji.new(emoji_params)
@@ -32,6 +28,12 @@ class EmojisController < ApplicationController
         format.json { render json: @emoji.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /emojis/1/edit
+  def edit
+    # @emoji = Emoji.find(params[:id])
+    set_emoji
   end
 
   # PATCH/PUT /emojis/1 or /emojis/1.json
