@@ -3,7 +3,17 @@ class EmojisController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
- 
+
+##### test ! à enlever
+@usertest = User.new(
+  email: "test@test.com",
+  password: "123456",
+  last_name: "Toto",
+  first_name: "Tata"
+)
+  @emoji = Emoji.new(:name => "Bobby", description: "description", price: 2, user: @usertest)
+
+
   # GET /emojis or /emojis.json
   def index
     @emojis = Emoji.all
@@ -21,10 +31,12 @@ class EmojisController < ApplicationController
   # POST /emojis or /emojis.json
   def create
     @emoji = Emoji.new(emoji_params)
+    @emoji.user = current_user
+    @emoji.tag_list.add(params[:emoji][:tag])
 
     respond_to do |format|
       if @emoji.save
-        format.html { redirect_to emoji_url(@emoji), notice: "Emoji was successfully created." }
+        format.html { redirect_to my_emojis_url, notice: "Emoji was successfully created." }
         format.json { render :show, status: :created, location: @emoji }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +55,7 @@ class EmojisController < ApplicationController
   def update
     respond_to do |format|
       if @emoji.update(emoji_params)
-        format.html { redirect_to emoji_url(@emoji), notice: "Emoji was successfully updated." }
+        format.html { redirect_to my_emojis_url, notice: "Emoji was successfully updated." }
         format.json { render :show, status: :ok, location: @emoji }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +69,7 @@ class EmojisController < ApplicationController
     @emoji.destroy!
 
     respond_to do |format|
-      format.html { redirect_to emojis_url, notice: "Emoji was successfully destroyed." }
+      format.html { redirect_to my_emojis_url, notice: "Emoji was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -70,6 +82,6 @@ class EmojisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def emoji_params
-      params.require(:emoji).permit(:name, :description, :price, :user_id, :picture)
+      params.require(:emoji).permit(:name, :description, :price, :picture)
     end
 end

@@ -1,6 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
+
 <h1 class="card-title my-5">Welcome to Emojiland</h1>
+
+<br>
+<%# <%= "4 CATEGORIES" %>
+<%# <label for="Categories">Choose a category:</label> %>
+      <select name="emoji[category]" id="category">
+        <option value="">Category</option>
+        <option value="licorn">licorn</option>
+        <option value="panda">panda</option>
+        <option value="?">?</option>
+        <option value="??">??</option>
+      </select>
+<br>
+
   <div class="d-flex justify-content-center">
     <div id="emojis" class="d-flex f-wrap">
       <% @emojis.each do |emoji| %>
@@ -11,6 +25,7 @@
       <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
         <%= link_to "New emoji", new_emoji_path %>
       </div>
+
     </div>
   </div>
 
