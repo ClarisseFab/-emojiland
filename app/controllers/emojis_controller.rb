@@ -1,6 +1,9 @@
 class EmojisController < ApplicationController
   before_action :set_emoji, only: %i[ show edit update destroy ]
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+ 
   # GET /emojis or /emojis.json
   def index
     @emojis = Emoji.all
@@ -21,7 +24,7 @@ class EmojisController < ApplicationController
 
     respond_to do |format|
       if @emoji.save
-        format.html { redirect_to my_emojis_path, notice: "Emoji was successfully created." }
+        format.html { redirect_to emoji_url(@emoji), notice: "Emoji was successfully created." }
         format.json { render :show, status: :created, location: @emoji }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +43,7 @@ class EmojisController < ApplicationController
   def update
     respond_to do |format|
       if @emoji.update(emoji_params)
-        format.html { redirect_to my_emojis_path, notice: "Emoji was successfully updated." }
+        format.html { redirect_to emoji_url(@emoji), notice: "Emoji was successfully updated." }
         format.json { render :show, status: :ok, location: @emoji }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +57,7 @@ class EmojisController < ApplicationController
     @emoji.destroy!
 
     respond_to do |format|
-      format.html { redirect_to my_emojis_path, notice: "Emoji was successfully destroyed." }
+      format.html { redirect_to emojis_url, notice: "Emoji was successfully destroyed." }
       format.json { head :no_content }
     end
   end
