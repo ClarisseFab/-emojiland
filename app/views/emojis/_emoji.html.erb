@@ -1,23 +1,34 @@
-<%= link_to emoji_path(emoji) do %>
-  <div id="<%= dom_id emoji %>" class="cards">
-    <div id="card-top" class="d-flex justify-content-center">
-      <p><% if emoji.picture.attached? %>
-          <%= cl_image_tag emoji.picture.key, height: 200, width: 200, crop: :fill %>
-      <% end %></p>
+
+  <div id="<%= dom_id emoji %>" class="cards p-0">
+    <div id="card-hover" class="d-none">
+      <%= link_to "Show this emoji", emoji %>
     </div>
 
-    <div id="card-bottom">
-      <h5 class="d-flex justify-content-center"><strong><%= emoji.name %></strong></h2>
-      <p>
-        <%= emoji.description %><br>
-        <strong><%= emoji.price %><%= "€" %></strong>
-      </p>
-    </div>
-</div>
-<% end %>
+        <div id="card-top" class="d-flex justify-content-center p-4">
+          <p><% if emoji.picture.attached? %>
+              <%= cl_image_tag emoji.picture.key, height: 220, width: 220, crop: :fill %>
+          <% end %></p>
+        </div>
+
+        <div id="card-bottom" class="my-0">
+          <h2 class="d-flex justify-content-center"><strong><%= emoji.name %></strong></h2>
+          <p>
+            <%= emoji.description[0..60] %>...<br>
+          </p>
+          <div class="d-flex justify-content-center align-items-end m-0">
+            <div id="card-price">
+              <strong><%= emoji.price %><%= "€" %></strong>
+            </div>
+          </div>
+        </div>
+  </div>
+
 
 
     <%# <p>
       <strong>User:</strong>
       <%= emoji.user.first_name %>
     <%# </p> %>
+
+      <%# <%= link_to emoji_path(emoji) do %>
+      <%# <% end %>
