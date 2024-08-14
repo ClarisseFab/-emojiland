@@ -1,4 +1,5 @@
 
+
 <div class="container" data-controller="datepicker">
   <h1><%=@emoji.name%></h1>
   <div>
@@ -22,6 +23,12 @@
                     as: :string,
                     input_html: {data: {datepicker_target: "calendar"}}
                     %>
+
+
+<%= link_to "Back to emojis", emojis_path, class:"btn btn-primary" %>
+
+
+
       </div>
 
       <p data-datepicker-target="price"> </p>
@@ -31,6 +38,6 @@
     <% end %>
 
   </div>
+
 </div>
 
-<%# total du prix à rajouter %>

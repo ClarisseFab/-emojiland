@@ -1,7 +1,17 @@
 
 <h1>My Bookings</h1>
 <p>Tous mes bookings en cours</p>
-
+<br>
+<%# <%= "4 CATEGORIES" %>
+<%# <label for="Categories">Choose a category:</label> %>
+      <select name="emoji[category]" id="category">
+        <option value="">Category</option>
+        <option value="licorn">licorn</option>
+        <option value="panda">panda</option>
+        <option value="?">?</option>
+        <option value="??">??</option>
+      </select>
+<br>
 
 <% current_user.bookings.each do |booking| %>
   <p>

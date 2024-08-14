@@ -28,6 +28,7 @@ gem "jbuilder"
 
 gem "devise"
 gem "cloudinary"
+gem 'acts-as-taggable-on', '~> 10.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
