@@ -1,20 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1 class="my-5">Emojis</h1>
-<div class="d-flex justify-content-center">
-  <div id="emojis" class="d-flex f-wrap">
-    <% @emojis.each do |emoji| %>
-      <div class="col-3 m-3 border border-dark rounded p-3">
-        <%= render emoji %>
-        <p>
-          <%= link_to "Show this emoji", emoji %>
-        </p>
+  <div class="d-flex justify-content-center">
+    <div id="emojis" class="d-flex f-wrap">
+      <% @emojis.each do |emoji| %>
+        <div class="m-3 p-0">
+          <%= render emoji %>
+        </div>
+      <% end %>
+      <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
+        <%= link_to "New emoji", new_emoji_path %>
       </div>
-    <% end %>
-    <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
-      <%= link_to "New emoji", new_emoji_path %>
     </div>
   </div>
-</div>
+
 
 <%# <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
+<%# <p>
+            <%= link_to "Show this emoji", emoji %>
+          <%# </p> %>
