@@ -5,6 +5,9 @@
     <% if @emoji.picture.attached? %>
       <%= cl_image_tag @emoji.picture.key, height: 300, width: 400, crop: :fill %>
     <% end %>
+    <p><%= @emoji.description%>
+    </p>
+    <p><%= @emoji.price %>€<p>
   </div>
 
   <%# card de réservation %>
@@ -20,6 +23,7 @@
                     input_html: { data: { controller: "datepicker" } } %>
       </div>
 
+      <p>Prix total : </p>
       <div class="form-actions">
         <%= f.button :submit %>
       </div>
@@ -27,3 +31,5 @@
 
   </div>
 </div>
+
+<%# total du prix à rajouter %>

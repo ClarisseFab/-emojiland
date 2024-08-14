@@ -57,4 +57,6 @@ export default class extends Controller {
     });
     mode: "range"
   }
+
+
 }

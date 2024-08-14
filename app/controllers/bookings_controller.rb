@@ -11,7 +11,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
+    dates = booking_params[:date_start_on].split(" to ")
+    @booking.date_start_on = dates[0]
+    @booking.date_end_on = dates[1]
     @booking.user = current_user
     @booking.emoji = Emoji.find(params[:emoji_id])
     respond_to do |format|
