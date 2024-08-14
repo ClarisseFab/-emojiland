@@ -18,8 +18,13 @@
   <div class="d-flex justify-content-center">
     <div id="emojis" class="d-flex f-wrap">
       <% @emojis.each do |emoji| %>
-        <div class="m-3 p-0">
-          <%= render emoji %>
+        <div class="card-h m-3 p-0">
+          <div class="cnt">
+            <%= render emoji %>
+          </div>
+          <div id="card-hover">
+            <%= link_to "Book emoji", emoji, class:"text-decoration-none" %>
+          </div>
         </div>
       <% end %>
       <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
