@@ -1,8 +1,9 @@
-.cards {
+.card {
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   width: 320px;
   text-decoration: none;
+  position: relative;
 }
 
 
@@ -17,6 +18,13 @@
   height: 270px;
   background: radial-gradient(#00E5F5, #2D9AFB);
   border-radius: 24px 24px 0px 0px;
+  position: relative;
+  .card-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   }
 
 #card-bottom {
@@ -24,6 +32,7 @@
   background-color: #FFFDFD;
   border-radius: 0px 0px 24px 24px;
   padding: 16px;
+  font-family: "Inter", sans-serif;
   h2 {
     color: #2A0C01;
     font-size: 20px;
@@ -44,4 +53,24 @@
   width: 124px;
   height: 28px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#card-hover {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:hover {
+  filter: brightness(0.2);
+  #card-hover {
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
