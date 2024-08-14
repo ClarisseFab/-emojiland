@@ -1,0 +1,47 @@
+.cards {
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 320px;
+  text-decoration: none;
+}
+
+
+.card-title {
+  color: #FAA500;
+  text-align: center;
+  font-size: 78px;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+#card-top {
+  height: 270px;
+  background: radial-gradient(#00E5F5, #2D9AFB);
+  border-radius: 24px 24px 0px 0px;
+  }
+
+#card-bottom {
+  height: 150px;
+  background-color: #FFFDFD;
+  border-radius: 0px 0px 24px 24px;
+  padding: 16px;
+  h2 {
+    color: #2A0C01;
+    font-size: 20px;
+    text-decoration-line: none;
+  }
+  p {
+    color:#2A0C01;
+    font-size: 16px;
+    }
+  }
+
+#card-price {
+  background-color: #FFCD63;
+  color: #2A0C01;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 16px 16px 0px 0px;
+  width: 124px;
+  height: 28px;
+  text-align: center;
+}
