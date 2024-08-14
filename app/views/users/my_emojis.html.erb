@@ -1,6 +1,16 @@
 <h1> My emojis</h1>
 <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
-
+<br>
+<%# <%= "4 CATEGORIES" %> 
+<%# <label for="Categories">Choose a category:</label> %>
+      <select name="emoji[category]" id="category">
+        <option value="">Category</option>
+        <option value="licorn">licorn</option>
+        <option value="panda">panda</option>
+        <option value="?">?</option>
+        <option value="??">??</option>
+      </select>
+<br>
 <% current_user.emojis.each do |emoji| %>
 <div >
   <p>
