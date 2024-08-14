@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" data-controller="datepicker">
   <h1><%=@emoji.name%></h1>
   <div>
     <% if @emoji.picture.attached? %>
@@ -7,11 +7,11 @@
     <% end %>
     <p><%= @emoji.description%>
     </p>
-    <p><%= @emoji.price %>€<p>
+    <p data-datepicker-target="emojiprice"><%= @emoji.price %><p>
   </div>
 
   <%# card de réservation %>
-  <div>
+  <div >
     <h3>Réserver cet emoji</h3>
     <%= simple_form_for [@emoji, @booking] do |f| %>
       <%= f.error_notification %>
@@ -20,10 +20,11 @@
       <div class="form-inputs">
         <%= f.input :date_start_on,
                     as: :string,
-                    input_html: { data: { controller: "datepicker" } } %>
+                    input_html: {data: {datepicker_target: "calendar"}}
+                    %>
       </div>
 
-      <p>Prix total : </p>
+      <p data-datepicker-target="price"> </p>
       <div class="form-actions">
         <%= f.button :submit %>
       </div>

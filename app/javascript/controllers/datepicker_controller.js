@@ -3,8 +3,14 @@ import flatpickr from "flatpickr";
 
 // Connects to data-controller="datepicker"
 export default class extends Controller {
+
+  static targets = ["price", "emojiprice", "calendar"]
   connect() {
-    flatpickr(this.element, {
+    let price = this.emojipriceTarget.innerText
+    let priceInteger = parseFloat(price)
+    let priceDiv = this.priceTarget
+
+    flatpickr(this.calendarTarget, {
       locale: {
         firstDayOfWeek: 1,
         weekdays: {
@@ -51,12 +57,22 @@ export default class extends Controller {
         },
       },
       mode: "range",
-      dateFormat: "d-m-Y",
       minDate: "today",
       maxDate: new Date().fp_incr(365),
+      onChange: function (selectedDates, dateStr, instance) {
+        /* console.log(dateStr) */
+        /* console.log(selectedDates) */
+        /* console.log(instance) */
+        let startDate = new Date(dateStr.split(" to ")[0]);
+        let endDate = new Date(dateStr.split(" to ")[1]);
+        let duration = (endDate - startDate) / ((1000 * 60 * 60 * 24))
+        let totalPrice = priceInteger * duration
+        console.log(totalPrice)
+        if (totalPrice > 0) {
+          priceDiv.innerHTML = `<p data-datepicker-target="price">Prix total : ${totalPrice}€ </p>`
+        }
+      },
     });
-    mode: "range"
+
   }
-
-
 }
