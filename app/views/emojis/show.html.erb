@@ -1,16 +1,29 @@
-<p style="color: green"><%= notice %></p>
-<div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-center col-3">
-    <div class="d-flex flex-column border border-dark rounded p-3">
-      <%= render @emoji %>
-      <div class="d-flex justify-content-between">
-        <%= link_to "Edit", edit_emoji_path(@emoji) %>
-        <%= link_to "Delete", @emoji, method: :delete %>
-        <%= link_to "Book", new_emoji_booking_path(@emoji) %>
+
+<div class="container">
+  <h1><%=@emoji.name%></h1>
+  <div>
+    <% if @emoji.picture.attached? %>
+      <%= cl_image_tag @emoji.picture.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+
+  <%# card de réservation %>
+  <div>
+    <h3>Réserver cet emoji</h3>
+    <%= simple_form_for [@emoji, @booking] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :date_start_on,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker" } } %>
       </div>
-      <div class="d-flex justify-content-center">
-        <%= link_to "Back to emojis", emojis_path %>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
       </div>
-    </div>
+    <% end %>
+
   </div>
 </div>
