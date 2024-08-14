@@ -1,12 +1,9 @@
 
-  <div id="<%= dom_id emoji %>" class="cards p-0">
-    <div id="card-hover" class="d-none">
-      <%= link_to "Show this emoji", emoji %>
-    </div>
+  <div id="<%= dom_id emoji %>" class="card p-0">
 
-        <div id="card-top" class="d-flex justify-content-center p-4">
+        <div id="card-top" class="d-flex justify-content-center">
           <p><% if emoji.picture.attached? %>
-              <%= cl_image_tag emoji.picture.key, height: 220, width: 220, crop: :fill %>
+              <%= cl_image_tag emoji.picture.key, height: 220, width: 220, crop: :fill, class:"card-image"%>
           <% end %></p>
         </div>
 
@@ -15,12 +12,15 @@
           <p>
             <%= emoji.description[0..60] %>...<br>
           </p>
-          <div class="d-flex justify-content-center align-items-end m-0">
+          <div class="d-flex justify-content-center align-items-end p-0">
             <div id="card-price">
               <strong><%= emoji.price %><%= "€" %></strong>
             </div>
           </div>
         </div>
+    <div id="card-hover" >
+      <%= link_to "Show this emoji", emoji, class:"btn btn-warning"%>
+    </div>
   </div>
 
 
