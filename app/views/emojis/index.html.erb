@@ -17,13 +17,13 @@
   <div>
     <div id="emojis" class="d-flex f-wrap justify-content-center">
 
-  
+
       <% @emojis.each do |emoji| %>
         <div class="card-h m-3 p-0">
           <div class="cnt">
             <%= render emoji %>
           </div>
-          <div id="card-hover">
+          <div id="card-hover" class="btn-orange">
             <%= link_to "Book emoji", emoji, class:"textDark text-decoration-none" %>
           </div>
         </div>
@@ -38,4 +38,3 @@
 <%# <p>
           <%= link_to "Show this emoji", emoji %>
         <%# </p> %>
-
