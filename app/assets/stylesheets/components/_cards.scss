@@ -10,15 +10,15 @@
 
 
 .card-title {
-  color: #FAA500;
+  // color: $orange-dark ;
   text-align: center;
-  font-size: 78px;
-  font-family: "RocknRoll One", sans-serif;
+  // font-size: 78px;
+  // font-family: "RocknRoll One", sans-serif;
 }
 
 #card-top {
   height: 270px;
-  background: radial-gradient(#00E5F5, #2D9AFB);
+  background: $gradient-blue;
   border-radius: 24px 24px 0px 0px;
   position: relative;
   .card-image {
@@ -36,19 +36,19 @@
   padding: 16px;
   font-family: "Inter", sans-serif;
   h2 {
-    color: #2A0C01;
+    color: $text-dark;
     font-size: 20px;
     text-decoration-line: none;
   }
   p {
-    color:#2A0C01;
+    color:$text-dark;
     font-size: 16px;
     }
   }
 
 #card-price {
-  background-color: #FFCD63;
-  color: #2A0C01;
+  background-color: $gradient-orange;
+  color: $text-dark;
   font-size: 16px;
   font-weight: bold;
   border-radius: 16px 16px 0px 0px;
@@ -73,9 +73,9 @@
   width: 182px;
   border-radius: 8px;
   font-family: "RocknRoll One", sans-serif;
-  color: #2A0C01;
+  color: $text-dark;
   font-size: 22px;
-  background: linear-gradient(#FFCD63, #FAA500);
+  background: $gradient-orange;
   text-align: center;
   text-decoration-style: none;
   padding: 8px 0px;
@@ -84,8 +84,10 @@
 .card-h:hover {
   .cnt {
     filter: brightness(0.2);
+    transition-duration: 0.3s;
   }
   #card-hover {
     opacity: 1;
+    transition-duration: 0.5s;
   }
 }
