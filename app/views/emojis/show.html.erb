@@ -2,8 +2,8 @@
 
 <div class="container" data-controller="datepicker">
   <div class="d-flex justify-content-between mb-5 mt-5">
-    <%= link_to "< Back to all", emojis_path, class:"btn btn-primary" %>
-    <h1>Book your emoji</h1>
+    <%= link_to "< Back to all", emojis_path, class:"btn-orange text-decoration-none pt-3" %>
+    <h1 id="orange-title">Book your emoji</h1>
     <div></div>
   </div>
   <div class="d-flex justify-content-center align-items-center">
@@ -46,7 +46,7 @@
         <p id="lign-center" class="lign-white">----------------</p>
         <p data-datepicker-target="price"> </p>
         <div class="form-actions">
-          <%= f.submit 'I want it !' %>
+          <%= f.submit 'I want it !', :class => 'btn-submit' %>
         </div>
       <% end %>
 

@@ -1,0 +1,14 @@
+.btn-orange {
+  background: $gradient-orange;
+  color: $text-dark;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 182px;
+  text-align: center;
+  padding: 8px 0px;
+
+  &:hover {
+    background: $orange-dark;
+  }
+}
