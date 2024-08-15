@@ -6,9 +6,9 @@ class Emoji < ApplicationRecord
 
 
 
-  acts_as_taggable_on :tags
-  # acts_as_taggable_on :skills, :interests
-  #You can also configure multiple tag types per model
+  # acts_as_taggable_on :tags
+  # # acts_as_taggable_on :skills, :interests
+  # #You can also configure multiple tag types per model
 
 
   belongs_to :user
