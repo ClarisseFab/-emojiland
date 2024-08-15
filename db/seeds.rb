@@ -22,7 +22,7 @@ usertest = User.create!(
 
 p "Creating category... 🔄"
 # categories = ["panda", "licorn", "hedgehog", "sloth"]
-categories = ["🐼", "🦄", "🦔", "🦥"]
+categories = ["🦔", "🦥", "🐼", "🦄"]
 
 categories.each { |c| Category.create(name: c) }
 
