@@ -1,43 +1,55 @@
 
 
 <div class="container" data-controller="datepicker">
-  <h1><%=@emoji.name%></h1>
-  <div>
-    <% if @emoji.picture.attached? %>
-      <%= cl_image_tag @emoji.picture.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <p><%= @emoji.description%>
-    </p>
-    <p data-datepicker-target="emojiprice"><%= @emoji.price %><p>
+  <div class="d-flex justify-content-between mb-5 mt-5">
+    <%= link_to "< Back to all", emojis_path, class:"btn btn-primary" %>
+    <h1>Book your emoji</h1>
+    <div></div>
   </div>
+  <div class="d-flex justify-content-center align-items-center">
+  <%# card de details de l'emoji %>
+    <div class="card-detail me-5">
+      <div id="card-top">
+        <% if @emoji.picture.attached? %>
+          <%= cl_image_tag @emoji.picture.key, height: 250, width: 250, crop: :fill, class:"card-image"%>
+        <% end %>
+      </div>
+      <div id="card-bottom" class="relative">
+        <h1><%=@emoji.name%></h1>
+        <p><%= @emoji.description%></p>
 
-  <%# card de réservation %>
-  <div >
-    <h3>Réserver cet emoji</h3>
-    <%= simple_form_for [@emoji, @booking] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="form-inputs">
-        <%= f.input :date_start_on,
-                    as: :string,
-                    input_html: {data: {datepicker_target: "calendar"}}
-                    %>
-
-
-<%= link_to "Back to emojis", emojis_path, class:"btn btn-primary" %>
-
-
+        <div class="d-flex justify-content-center align-items-end p-0 ">
+          <div id="card-price">
+            <p data-datepicker-target="emojiprice"><strong><%= @emoji.price.to_s.sub(/\.0+$/, '') %>€</strong><p>
+          </div>
+        </div>
 
       </div>
+    </div>
 
-      <p data-datepicker-target="price"> </p>
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
+    <%# card de réservation %>
+    <div class ="booking-card d-flex flex-column align-items-center">
+      <h3>Book this emoji</h3>
+      <p class="lign-white">----------------</p>
 
+      <%= simple_form_for [@emoji, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :date_start_on,
+                      label: 'Select the dates',
+                      as: :string,
+                      input_html: {data: {datepicker_target: "calendar"}}
+                      %>
+        </div>
+        <p id="lign-center" class="lign-white">----------------</p>
+        <p data-datepicker-target="price"> </p>
+        <div class="form-actions">
+          <%= f.submit 'I want it !' %>
+        </div>
+      <% end %>
+
+    </div>
   </div>
-
 </div>
-

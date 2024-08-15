@@ -14,7 +14,7 @@
           </p>
           <div class="d-flex justify-content-center align-items-end p-0">
             <div id="card-price">
-              <strong><%= emoji.price %><%= "€" %></strong>
+              <strong><%= emoji.price.to_s.sub(/\.0+$/, '') %><%= "€" %></strong>
             </div>
           </div>
         </div>
