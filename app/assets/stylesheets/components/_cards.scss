@@ -76,13 +76,14 @@
   transform: translate(-50%, -50%);
   width: 182px;
   border-radius: 8px;
-  font-family: "RocknRoll One", sans-serif;
-  color: $text-dark;
   font-size: 22px;
   background: $gradient-orange;
   text-align: center;
-  text-decoration-style: none;
   padding: 8px 0px;
+}
+
+.textDark {
+  color: $text-dark;
 }
 
 .card-h:hover {
@@ -93,5 +94,6 @@
   #card-hover {
     opacity: 1;
     transition-duration: 0.5s;
+    background-color: $orange-dark;
   }
 }
