@@ -1,0 +1,8 @@
+
+<div class= category-all>
+<%= link_to "all emojis", request.path, class: "category-link" %>
+<% Category.all.each do |category| %>
+  <%= link_to category.name, "#{request.path}?category=#{category.id}", class: "category-link" %>
+
+<% end %>
+</div>

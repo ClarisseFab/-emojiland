@@ -1,22 +1,17 @@
 class EmojisController < ApplicationController
+
   before_action :set_emoji, only: %i[ show edit update destroy ]
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 
-##### test ! à enlever
-@usertest = User.new(
-  email: "test@test.com",
-  password: "123456",
-  last_name: "Toto",
-  first_name: "Tata"
-)
-  @emoji = Emoji.new(:name => "Bobby", description: "description", price: 2, user: @usertest)
-
-
   # GET /emojis or /emojis.json
   def index
     @emojis = Emoji.all
+    if params[:category] && Category.exists?(params[:category])
+      category = Category.find params[:category]
+      @emojis = @emojis.select { |emoji| emoji.categories.include? category }
+    end
   end
 
   # GET /emojis/1 or /emojis/1.json
@@ -32,6 +27,12 @@ class EmojisController < ApplicationController
   # POST /emojis or /emojis.json
   def create
     @emoji = Emoji.new(emoji_params)
+    params[:emoji][:categories].each do |category_id|
+      if Category.exists? category_id
+        category = Category.find category_id
+        @emoji.categories << category
+      end
+    end
     @emoji.user = current_user
     @emoji.tag_list.add(params[:emoji][:tag])
 

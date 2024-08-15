@@ -1,17 +1,10 @@
 <div class="text-center d-flex justify-content-center">
     <h1 class="card-title my-5 col-11">My emojis</h1>
   </div>
-<%# <br> %>
-<%# <%= "4 CATEGORIES" %>
-<%# <label for="Categories">Choose a category:</label> %>
-      <%# <select name="emoji[category]" id="category"> %>
-        <%# <option value="">Category</option> %>
-        <%# <option value="licorn">licorn</option> %>
-        <%# <option value="panda">panda</option> %>
-        <%# <option value="?">?</option> %>
-        <%# <option value="??">??</option> %>
-      <%# </select> %>
-<%# <br> %>
+
+<br>
+<%= render partial: "emojis/category" %>
+<br>
 
 
 <div>
@@ -55,6 +48,12 @@
     <%# <%= emoji.price  %>
     <%# <%= "€" %>
   <%# </p> %>
+
+
+  <p>
+    <strong>Categories:</strong>
+    <%= emoji.categories.map(&:name).join(" ") %>
+  </p>
 
 <%# mettre image ici %>
   <%# <p> %>
