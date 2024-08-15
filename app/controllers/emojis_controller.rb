@@ -34,7 +34,7 @@ class EmojisController < ApplicationController
       end
     end
     @emoji.user = current_user
-    @emoji.tag_list.add(params[:emoji][:tag])
+    # @emoji.tag_list.add(params[:emoji][:tag])
 
     respond_to do |format|
       if @emoji.save

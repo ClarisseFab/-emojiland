@@ -1,6 +1,6 @@
 require 'faker'
 
-p "Destroying all categories"
+p "Destroying all categories... 💀"
 EmojiCategory.destroy_all
 Category.destroy_all
 
@@ -9,6 +9,7 @@ User.destroy_all
 
 p "Destroying all emojis... 💀"
 Emoji.destroy_all
+# emojis déjà lié à user
 
 p "Creating a new user test... 🔄"
 
@@ -19,8 +20,9 @@ usertest = User.create!(
   first_name: "Tata"
 )
 
-p "Creating category"
-categories = ["panda", "licorn", "hedgehog", "sloth"]
+p "Creating category... 🔄"
+# categories = ["panda", "licorn", "hedgehog", "sloth"]
+categories = ["🐼", "🦄", "🦔", "🦥"]
 
 categories.each { |c| Category.create(name: c) }
 
@@ -39,5 +41,13 @@ p "Creating 10 new emojis... 🔄"
   emoji.picture.attach(io: file, filename: "nes.png", content_type: "image/png")
   emoji.save!
 end
+
+
+# p "Creating bookings... 🔄"
+# # categories = ["panda", "licorn", "hedgehog", "sloth"]
+# bookings = ["🐼", "🦄", "🦔", "🦥"]
+
+# bookings.each { |c| Category.create(name: c) }
+
 
 p "Finished! 👏"
