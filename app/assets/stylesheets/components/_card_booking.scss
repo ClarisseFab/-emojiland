@@ -1,4 +1,5 @@
-.booking-card {
+.booking-card,
+.card-logout {
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
   width: 400px;
@@ -39,4 +40,15 @@
 
 .font-size {
   font-size: 20px;
+}
+
+/* card booking without sign-up
+ */
+#card-title {
+  margin-top: 80px;
+}
+
+.btn-login {
+  margin-top: 32px;
+  background-color: white;
 }
