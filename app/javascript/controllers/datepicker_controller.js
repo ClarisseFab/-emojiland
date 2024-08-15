@@ -69,7 +69,7 @@ export default class extends Controller {
         let totalPrice = priceInteger * duration
         console.log(totalPrice)
         if (totalPrice > 0) {
-          priceDiv.innerHTML = `<p data-datepicker-target="price">Prix total : ${totalPrice}€ </p>`
+          priceDiv.innerHTML = `<p data-datepicker-target="price" class="form-inputs font-size">Total : ${totalPrice.toFixed(2).replace(/\.0+$/, '')}€ </p>`
         }
       },
     });

@@ -8,21 +8,22 @@
         </div>
 
         <div id="card-bottom" class="my-0">
-          <h2 class="d-flex justify-content-center"><strong><%= emoji.name %></strong></h2>
+          <h2><strong><%= emoji.name.capitalize %></strong></h2>
           <p>
-            <%= emoji.description[0..60] %>...<br>
+            <%= emoji.description[0..60].capitalize %>...<br>
           </p>
           <div class="d-flex justify-content-center align-items-end p-0">
             <div id="card-price">
-              <strong><%= emoji.price %><%= "€" %></strong>
+              <strong><%= emoji.price.to_s.sub(/\.0+$/, '') %><%= "€" %></strong>
             </div>
           </div>
         </div>
-  </div>
-
     <%# <div id="card-hover" >
       <%= link_to "Show this emoji", emoji, class:"btn btn-warning"%>
     <%# </div> %>
+  </div>
+
+
 
     <%# <p>
       <strong>User:</strong>

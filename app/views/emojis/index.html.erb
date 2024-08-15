@@ -1,6 +1,12 @@
 <p style="color: green"><%= notice %></p>
+<div class="d-flex flex-column justify-content-center">
+  <div class="text-center d-flex justify-content-center">
+    <h1 class="card-title my-5 col-11">Welcome to Emojiland</h1>
+  </div>
+  <div class="text-center d-flex justify-content-center">
+    <p class="col-11">Bienvenue sur Emojiland, la boutique en ligne dédiée aux passionnés d'emojis ! Découvrez notre collection exclusive d'emojis uniques et amusants pour personnaliser vos messages, réseaux sociaux, et bien plus. Exprimez-vous avec style et créativité grâce à notre vaste sélection d'emojis qui rendront chaque conversation encore plus vivante !</p>
+  </div>
 
-<h1 class="card-title my-5">Welcome to Emojiland</h1>
 
 <br>
 <div class="custom-select" style="height:200px;">
@@ -8,20 +14,28 @@
 </div>
 <br>
 
-  <div class="d-flex justify-content-center">
-    <div id="emojis" class="d-flex f-wrap">
+  <div>
+    <div id="emojis" class="d-flex f-wrap justify-content-center">
+
+  
       <% @emojis.each do |emoji| %>
         <div class="card-h m-3 p-0">
           <div class="cnt">
             <%= render emoji %>
           </div>
           <div id="card-hover">
-            <%= link_to "Book emoji", emoji, class:"text-decoration-none" %>
+            <%= link_to "Book emoji", emoji, class:"textDark text-decoration-none" %>
           </div>
         </div>
       <% end %>
-      <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
-      </div>
 
     </div>
   </div>
+</div>
+
+
+<%# <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
+<%# <p>
+          <%= link_to "Show this emoji", emoji %>
+        <%# </p> %>
+
