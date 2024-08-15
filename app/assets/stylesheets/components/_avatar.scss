@@ -1,9 +1,12 @@
 .avatar {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   font-family: "RocknRoll One", sans-serif;
   color: #2A0C01;
+  padding: 8px;
+  border : 1.5px solid white;
 }
 .avatar-large {
   width: 56px;

@@ -3,6 +3,11 @@
   background: linear-gradient(to right, #FFCD63, #FAA500);
   font-family: "RocknRoll One", sans-serif;
   color: #2A0C01;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  height: 60px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,5 +17,3 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
-
