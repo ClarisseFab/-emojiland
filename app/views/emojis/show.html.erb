@@ -28,22 +28,25 @@
     </div>
 
     <%# card de réservation %>
-    <div class ="booking-card ms-5">
+    <div class ="booking-card d-flex flex-column align-items-center">
       <h3>Book this emoji</h3>
+      <p class="lign-white">----------------</p>
+
       <%= simple_form_for [@emoji, @booking] do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
         <div class="form-inputs">
           <%= f.input :date_start_on,
+                      label: 'Select the dates',
                       as: :string,
                       input_html: {data: {datepicker_target: "calendar"}}
                       %>
         </div>
-
+        <p id="lign-center" class="lign-white">----------------</p>
         <p data-datepicker-target="price"> </p>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <%= f.submit 'I want it !' %>
         </div>
       <% end %>
 

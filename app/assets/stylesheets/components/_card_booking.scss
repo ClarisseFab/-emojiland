@@ -4,5 +4,26 @@
   width: 400px;
   height: 350px;
   text-decoration: none;
-  background: linear-gradient(to right, #FFCD63, #FAA500);
+  background: radial-gradient(#FFCD63, #FAA500);
+
+  h3 {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+
+.form-actions,
+#lign-center {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.form-inputs {
+  margin-top: 6px;
+  text-align: center;
+}
+
+.lign-white {
+  color: white;
 }
