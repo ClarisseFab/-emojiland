@@ -2,7 +2,35 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ destroy ]
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
+    # if params[:category] && Category.exists?(params[:category])
+    #   category = Category.find params[:category]
+    #   @bookings_result = []
+    #   @bookings.each do |booking|
+    #     booking.emoji.categories.each do |ecategory|
+    #       @bookings_result << booking if ecategory == category
+    #     end
+    #   end
+    #   @bookings = @bookings_result.uniq
+    # end
+
+
+    if params[:category] && Category.exists?(params[:category])
+      category_id = params[:category]
+      # Je mets sur l'objet Booking
+      @bookings = Booking
+                  # Je joins la table categories (booking.category_id = cateogry.id)
+                  .joins(emoji: :categories)
+                  # Je selectionne que les bookings qui appartienne à mon user
+                  # Je selectionne que les bookings dont au moin une des categories de mon emojie match
+                  # avec la category demandé
+                  .where(
+                    user_id: current_user.id,
+                    categories: { id: category_id }
+                  )
+                  # Je supprime tout les bookings en double (.uniq)
+                  .distinct
+    end
   end
 
   def new

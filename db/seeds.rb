@@ -1,5 +1,9 @@
 require 'faker'
 
+p "Destroying all categories"
+EmojiCategory.destroy_all
+Category.destroy_all
+
 p "Destroying users... 💀"
 User.destroy_all
 
@@ -15,6 +19,11 @@ usertest = User.create!(
   first_name: "Tata"
 )
 
+p "Creating category"
+categories = ["panda", "licorn", "hedgehog", "sloth"]
+
+categories.each { |c| Category.create(name: c) }
+
 p "Creating 10 new emojis... 🔄"
 
 10.times do
@@ -26,6 +35,7 @@ p "Creating 10 new emojis... 🔄"
   )
 
   file = URI.open(Faker::LoremFlickr.image)
+  emoji.categories << Category.all.sample
   emoji.picture.attach(io: file, filename: "nes.png", content_type: "image/png")
   emoji.save!
 end

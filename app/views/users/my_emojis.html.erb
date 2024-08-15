@@ -2,10 +2,10 @@
 <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
 
 <br>
-<%= render "/emojis/category" %>
+<%= render partial: "emojis/category" %>
 <br>
 
-<% current_user.emojis.each do |emoji| %>
+<% @emojis.each do |emoji| %>
 <div >
   <p>
     <strong>Name:</strong>
@@ -21,6 +21,11 @@
     <strong>Price:</strong>
     <%= emoji.price  %>
     <%= "€" %>
+  </p>
+
+    <p>
+    <strong>Categories:</strong>
+    <%= emoji.categories.map(&:name).join(" ") %>
   </p>
 
 <%# mettre image ici %>

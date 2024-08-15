@@ -6,7 +6,7 @@
 <%= render "/emojis/category" %>
 <br>
 
-<% current_user.bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
   <p>
     <strong>Name:</strong>
     <%= booking.emoji.name %>
