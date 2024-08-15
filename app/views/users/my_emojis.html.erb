@@ -12,16 +12,18 @@
       <div class="m-3 p-0 text-center">
         <%= link_to "+ Create a new emoji", new_emoji_path, class:"new-emoji card" %>
       </div>
-      <% current_user.emojis.each do |emoji| %>
+      <% @emojis.each do |emoji| %>
         <div class="card-h m-3 p-0">
           <div class="cnt">
             <%= render emoji %>
           </div>
-          <div class="btn-orange">
-            <%= link_to "Update emoji", edit_emoji_path(emoji), class:"textDark text-decoration-none"  %>
-          </div>
-          <div class="btn-orange">
-            <%= link_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
+          <div id="card-hover">
+            <div class="btn-orange my-4">
+              <%= link_to "Update emoji", edit_emoji_path(emoji), class:"textDark text-decoration-none"  %>
+            </div>
+            <div class="btn-orange my-4">
+              <%= button_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
+            </div>
           </div>
         </div>
       <% end %>
@@ -50,10 +52,10 @@
   <%# </p> %>
 
 
-  <p>
+  <%# <p>
     <strong>Categories:</strong>
     <%= emoji.categories.map(&:name).join(" ") %>
-  </p>
+  <%# </p> %>
 
 <%# mettre image ici %>
   <%# <p> %>
