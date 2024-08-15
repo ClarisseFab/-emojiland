@@ -3,7 +3,9 @@
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   width: 320px;
   text-decoration: none;
-  position: relative;
+  // &:hover {
+  //   filter: brightness(0.2);
+  // }
 }
 
 
@@ -58,6 +60,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.card-h {
+  position: relative;
+}
 
 #card-hover {
   opacity: 0;
@@ -65,12 +70,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 182px;
+  border-radius: 8px;
+  font-family: "RocknRoll One", sans-serif;
+  color: #2A0C01;
+  font-size: 22px;
+  background: linear-gradient(#FFCD63, #FAA500);
+  text-align: center;
+  text-decoration-style: none;
+  padding: 8px 0px;
 }
 
-.card:hover {
-  filter: brightness(0.2);
+.card-h:hover {
+  .cnt {
+    filter: brightness(0.2);
+  }
   #card-hover {
     opacity: 1;
-    filter: brightness(1);
   }
 }
