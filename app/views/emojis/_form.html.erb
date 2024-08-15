@@ -8,15 +8,8 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :picture, as: :file %>
-    <label for="tag">Choose a category:</label>
+    <%= f.input :categories, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]} %>
 
-      <select name="emoji[tag]" id="tag">
-        <option value="">--Please choose an option--</option>
-        <option value="licorn">licorn</option>
-        <option value="panda">panda</option>
-        <option value="?">?</option>
-        <option value="??">??</option>
-      </select>
   </div>
 
   <div class="form-actions">
