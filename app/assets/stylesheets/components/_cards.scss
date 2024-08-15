@@ -80,6 +80,12 @@
   background: $gradient-orange;
   text-align: center;
   padding: 8px 0px;
+  &:hover {
+    background: $orange-dark;
+  }
+  &:focus {
+    background: $orange-light;
+  }
 }
 
 .textDark {
