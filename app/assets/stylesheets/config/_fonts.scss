@@ -2,8 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "RocknRoll One", "Inter", "sans-serif";
+$body-font: "RocknRoll One", "Inter", "sans-serif";
+
+.body {
+  h1 {
+    font-family: "RocknRoll One", sans-serif;
+    font-size: 78px;
+  }
+  h2{
+    font-family: "RocknRoll One", sans-serif;
+    font-size: 30px;
+  }
+  p {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

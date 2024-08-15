@@ -1,19 +1,21 @@
 <p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-center flex-column">
+  <div class="text-center col-11">
+  <h1 class="card-title my-5">Welcome to Emojiland</h1>
+    <p>Bienvenue sur Emojiland, la boutique en ligne dédiée aux passionnés d'emojis ! Découvrez notre collection exclusive d'emojis uniques et amusants pour personnaliser vos messages, réseaux sociaux, et bien plus. Exprimez-vous avec style et créativité grâce à notre vaste sélection d'emojis qui rendront chaque conversation encore plus vivante !</p>
+  </div>
 
-
-<h1 class="card-title my-5">Welcome to Emojiland</h1>
-
-<br>
-<%# <%= "4 CATEGORIES" %>
-<%# <label for="Categories">Choose a category:</label> %>
-      <select name="emoji[category]" id="category">
-        <option value="">Category</option>
-        <option value="licorn">licorn</option>
-        <option value="panda">panda</option>
-        <option value="?">?</option>
-        <option value="??">??</option>
-      </select>
-<br>
+  <br>
+  <%# <%= "4 CATEGORIES" %>
+  <%# <label for="Categories">Choose a category:</label> %>
+        <select name="emoji[category]" id="category">
+          <option value="">Category</option>
+          <option value="licorn">licorn</option>
+          <option value="panda">panda</option>
+          <option value="?">?</option>
+          <option value="??">??</option>
+        </select>
+  <br>
 
   <div class="d-flex justify-content-center">
     <div id="emojis" class="d-flex f-wrap">
@@ -27,15 +29,12 @@
           </div>
         </div>
       <% end %>
-      <div class="col-3 m-3 p-3 d-flex justify-content-center align-self-center">
-        <%= link_to "New emoji", new_emoji_path %>
-      </div>
-
     </div>
   </div>
+</div>
 
 
 <%# <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
 <%# <p>
-            <%= link_to "Show this emoji", emoji %>
-          <%# </p> %>
+          <%= link_to "Show this emoji", emoji %>
+        <%# </p> %>
