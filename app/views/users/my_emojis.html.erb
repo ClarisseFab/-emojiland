@@ -1,47 +1,75 @@
-<h1> My emojis</h1>
-<%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
-<br>
-<%# <%= "4 CATEGORIES" %> 
+<div class="text-center d-flex justify-content-center">
+    <h1 class="card-title my-5 col-11">My emojis</h1>
+  </div>
+<%# <br> %>
+<%# <%= "4 CATEGORIES" %>
 <%# <label for="Categories">Choose a category:</label> %>
-      <select name="emoji[category]" id="category">
-        <option value="">Category</option>
-        <option value="licorn">licorn</option>
-        <option value="panda">panda</option>
-        <option value="?">?</option>
-        <option value="??">??</option>
-      </select>
-<br>
-<% current_user.emojis.each do |emoji| %>
-<div >
-  <p>
-    <strong>Name:</strong>
-    <%= emoji.name %>
-  </p>
+      <%# <select name="emoji[category]" id="category"> %>
+        <%# <option value="">Category</option> %>
+        <%# <option value="licorn">licorn</option> %>
+        <%# <option value="panda">panda</option> %>
+        <%# <option value="?">?</option> %>
+        <%# <option value="??">??</option> %>
+      <%# </select> %>
+<%# <br> %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= emoji.description %>
-  </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= emoji.price  %>
-    <%= "€" %>
-  </p>
+<div>
+    <div id="emojis" class="d-flex f-wrap justify-content-center">
+      <div class="m-3 p-0 text-center">
+        <%= link_to "+ Create a new emoji", new_emoji_path, class:"new-emoji card" %>
+      </div>
+      <% current_user.emojis.each do |emoji| %>
+        <div class="card-h m-3 p-0">
+          <div class="cnt">
+            <%= render emoji %>
+          </div>
+          <div class="btn-orange">
+            <%= link_to "Update emoji", edit_emoji_path(emoji), class:"textDark text-decoration-none"  %>
+          </div>
+          <div class="btn-orange">
+            <%= link_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+<%# <% current_user.emojis.each do |emoji| %>
+<%# <div > %>
+  <%# <p> %>
+    <%# <strong>Name:</strong> %>
+    <%# <%= emoji.name %>
+  <%# </p> %>
+
+  <%# <p> %>
+    <%# <strong>Description:</strong> %>
+    <%# <%= emoji.description %>
+  <%# </p> %>
+
+  <%# <p> %>
+    <%# <strong>Price:</strong> %>
+    <%# <%= emoji.price  %>
+    <%# <%= "€" %>
+  <%# </p> %>
 
 <%# mettre image ici %>
-  <p>
-    <% if emoji.picture.attached? %>
-    <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  </p>
-</div>
-<br>
+  <%# <p> %>
+    <%# <% if emoji.picture.attached? %>
+    <%# <%= cl_image_tag emoji.picture.key, height: 300, width: 400, crop: :fill %>
+  <%# <% end %>
+  <%# </p> %>
+<%# </div> %>
+<%# <br> %>
 
-<%= link_to "Edit", edit_emoji_path(emoji), class:"btn btn-primary"  %>
+<%# <%= link_to "New emoji", new_emoji_path, class:"btn btn-primary" %>
+<%# <%= link_to "Edit", edit_emoji_path(emoji), class:"btn btn-primary"  %>
 <%# <%= link_to "Destroy this emoji", emoji , method: :delete, class:"btn btn-primary" %>
-<%= button_to "Destroy this emoji", emoji, method: :delete %>
-<% end %>
+<%# <%= button_to "Destroy this emoji", emoji, method: :delete %>
+<%# <% end %>
 
 <%# <div>
   <%= link_to "Back", emojis_path, class:"btn btn-primary" %>
