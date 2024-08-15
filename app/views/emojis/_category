@@ -1,0 +1,10 @@
+<br>
+      <select name="emoji[categories]" id="category" >
+
+        <option value="">Categories</option>
+        <option value="licorn">licorn</option>
+        <option value="panda">panda</option>
+        <option value="hedgehog">hedgehog</option>
+        <option value="sloth">sloth</option>
+      </select>
+<br>

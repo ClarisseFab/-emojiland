@@ -1,23 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-
 <h1 class="card-title my-5">Welcome to Emojiland</h1>
 
 <br>
-<%# <%= "4 CATEGORIES" %>
-<%# <label for="Categories">Choose a category:</label> %>
 <div class="custom-select" style="width:200px;">
-
-
-  <select name="emoji[category]" id="category">
-    <option value="">Category</option>
-    <option value="licorn">licorn</option>
-    <option value="panda">panda</option>
-    <option value="?">?</option>
-    <option value="??">??</option>
-  </select>
-
-  
+  <%= render "category" %>
 </div>
 <br>
 
