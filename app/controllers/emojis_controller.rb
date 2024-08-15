@@ -21,6 +21,7 @@ class EmojisController < ApplicationController
 
   # GET /emojis/1 or /emojis/1.json
   def show
+    @booking = Booking.new
   end
 
   # GET /emojis/new
