@@ -29,13 +29,21 @@
   color: white;
 }
 
-.btn-submit {
+.btn-white,
+.btn-login {
   color: $text-dark;
   font-size: 18px;
   border-radius: 8px;
   width: 175px;
   height: 45px;
   border: none;
+  background-color: white;
+}
+
+.btn-login {
+  text-align: center;
+  padding: 8px 0px;
+  margin-top: 16px;
 }
 
 .font-size {
@@ -48,7 +56,7 @@
   margin-top: 80px;
 }
 
-.btn-login {
-  margin-top: 32px;
-  background-color: white;
+/* bouton back to emoji */
+#div-btn {
+  height: 50px;
 }
