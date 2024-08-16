@@ -92,11 +92,11 @@
 .card-h:hover {
   .cnt {
     filter: brightness(0.2);
-    transition-duration: 0.3s;
+    transition-duration: 0.8s;
   }
   #card-hover {
     opacity: 1;
-    transition-duration: 0.5s;
+    transition-duration: 0.8s;
     // background-color: $orange-dark;
   }
 }
