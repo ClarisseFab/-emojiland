@@ -1,4 +1,5 @@
-.booking-card {
+.booking-card,
+.card-logout {
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
   width: 400px;
@@ -28,15 +29,34 @@
   color: white;
 }
 
-.btn-submit {
+.btn-white,
+.btn-login {
   color: $text-dark;
   font-size: 18px;
   border-radius: 8px;
   width: 175px;
   height: 45px;
   border: none;
+  background-color: white;
+}
+
+.btn-login {
+  text-align: center;
+  padding: 8px 0px;
+  margin-top: 16px;
 }
 
 .font-size {
   font-size: 20px;
+}
+
+/* card booking without sign-up
+ */
+#card-title {
+  margin-top: 80px;
+}
+
+/* bouton back to emoji */
+#div-btn {
+  height: 50px;
 }

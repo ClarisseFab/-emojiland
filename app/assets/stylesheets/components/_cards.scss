@@ -77,15 +77,12 @@
   width: 182px;
   border-radius: 8px;
   font-size: 22px;
-  background: $gradient-orange;
+  // background: $gradient-orange;
   text-align: center;
   padding: 8px 0px;
-  &:hover {
-    background: $orange-dark;
-  }
-  &:focus {
-    background: $orange-light;
-  }
+  // &:hover {
+  //   background: $orange-dark;
+  // }
 }
 
 .textDark {
@@ -100,7 +97,7 @@
   #card-hover {
     opacity: 1;
     transition-duration: 0.5s;
-    background-color: $orange-dark;
+    // background-color: $orange-dark;
   }
 }
 

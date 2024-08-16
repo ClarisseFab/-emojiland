@@ -1,0 +1,15 @@
+#form-unicorn {
+  background: $gradient-blue;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin-bottom: 80px;
+  z-index: 999121313;
+}
+
+#unicorn {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
