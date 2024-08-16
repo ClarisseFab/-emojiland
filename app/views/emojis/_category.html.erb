@@ -1,8 +1,9 @@
 
 <div class= "category-card row d-flex justify-content-between">
-<%= link_to "All emojis", request.path, class: "category-link col-2 selected" %>
-<% Category.all.each do |category| %>
-  <%= link_to category.name, "#{request.path}?category=#{category.id}", class: "category-link col-2" %>
 
-<% end %>
-</div>
+  <%= link_to "All", request.path, class: "category-link-text col-2 #{'selected' unless @current_category}" %>
+
+  <% Category.all.each do |category| %>
+     <%= link_to category.name, "#{request.path}?category=#{category.id}", class: "category-link col-2 #{'selected' if @current_category == category}"%>
+  <% end %>
+ </div>

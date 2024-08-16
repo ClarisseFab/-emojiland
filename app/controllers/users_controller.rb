@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       category = Category.find params[:category]
       @emojis = @emojis.select { |emoji| emoji.categories.include? category }
     end
+    @current_category = category
   end
 
   private

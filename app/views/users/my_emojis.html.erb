@@ -1,5 +1,5 @@
 <div class="text-center d-flex justify-content-center">
-    <h1 class="card-title my-5 col-11">My emojis</h1>
+  <h1 class="card-title my-5 col-11">My emojis</h1>
 </div>
 
 <br>
@@ -27,29 +27,27 @@
           </div>
 
           <%# bouton original %>
+
           <%# <div class="btn-orange">
             <%= button_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
           <%# </div> %>
 
+
           <div class="my-4">
             <%= button_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none btn btn-link btn-orange" %>
+
             <%# btn btn-link => btn qui ressemble à un link %>
             <%# btn-orange => descendu et delete dans la div = bonne taille %>
             <%# text-dark plutot que textDark => sinon bleu... me demande pas pk %>
             <%# mais problème de blinking qd hover.... %>
           </div>
+
+          
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 

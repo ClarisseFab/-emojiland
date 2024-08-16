@@ -11,6 +11,8 @@ class EmojisController < ApplicationController
     if params[:category] && Category.exists?(params[:category])
       category = Category.find params[:category]
       @emojis = @emojis.select { |emoji| emoji.categories.include? category }
+      @current_category = category
+      # pour la category card
     end
   end
 
