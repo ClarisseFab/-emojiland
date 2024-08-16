@@ -21,13 +21,16 @@
             </li>
           </ul>
           <div class="nav-item dropdown">
-            <a href="#" class="avatar text-decoration-none" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.last_name[0].capitalize + "" + current_user.first_name[0].capitalize%>
-            </a>
+            <div class="avatar d-flex justify-content-center">
+              <a href="#" class="text-decoration-none initial" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.last_name[0].capitalize + "" + current_user.first_name[0].capitalize%>
+              </a>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# <%= link_to "Action", "#", class: "dropdown-item" %>
               <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
             </div>
           </div>
         <% else %>
