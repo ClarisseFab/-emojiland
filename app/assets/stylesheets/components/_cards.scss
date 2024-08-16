@@ -101,6 +101,19 @@
   }
 }
 
+.cards-scontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  justify-content: center;
+  max-width: max-content;
+}
 
 .new-emoji {
   height: 420px;
@@ -110,4 +123,8 @@
   text-align: center;
   padding: 150px 20px 0px 20px;
 
+}
+
+.w-100 {
+  padding: auto;
 }

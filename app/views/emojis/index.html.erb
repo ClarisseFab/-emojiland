@@ -13,9 +13,8 @@
     <%= render "category" %>
   </div>
   <br>
-
-  <div class="mx-3">
-    <div id="emojis" class="d-flex f-wrap">
+  <div class="cards-scontainer">
+    <div class="cards-container">
       <% @emojis.each do |emoji| %>
         <div class="card-h m-3 p-0">
           <div class="cnt">
@@ -26,7 +25,6 @@
           </div>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>
