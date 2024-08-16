@@ -8,17 +8,14 @@
   </div>
 
 
-<br>
-<div class="custom-select row justify-content-md-center" >
-<%# style="height:200px;" %>
-  <%= render "category" %>
-</div>
-<br> 
+  <br>
+  <div class="custom-select row justify-content-md-center" >
+    <%= render "category" %>
+  </div>
+  <br>
 
-  <div>
-    <div id="emojis" class="d-flex f-wrap justify-content-center">
-
-
+  <div class="mx-3">
+    <div id="emojis" class="d-flex f-wrap">
       <% @emojis.each do |emoji| %>
         <div class="card-h m-3 p-0">
           <div class="cnt">
