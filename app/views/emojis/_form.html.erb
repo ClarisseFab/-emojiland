@@ -8,11 +8,13 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :picture, as: :file %>
-    <%= f.input :categories, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]} %>
-
+    <%= f.label :categories %>
+    <div class="ok">
+      <%= f.input :categories, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]}, class: "checkbox-inline", label: '' %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Create my super emoji!', :class => "button_submit_form_emoji" %>
   </div>
 <% end %>

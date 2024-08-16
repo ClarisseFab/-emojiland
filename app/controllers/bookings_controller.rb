@@ -48,6 +48,7 @@ class BookingsController < ApplicationController
     @booking.date_end_on = dates[1]
     @booking.user = current_user
     @booking.emoji = Emoji.find(params[:emoji_id])
+    @booking.price_booking = ((@booking.date_end_on - @booking.date_start_on) * @booking.emoji.price).to_s.sub(/\.0+$/, '')
     respond_to do |format|
       if @booking.save
         format.html { redirect_to bookings_path, notice: "Emoji was successfully booked." }
@@ -76,6 +77,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:date_start_on, :date_end_on)
+      params.require(:booking).permit(:date_start_on, :date_end_on, :price_booking)
     end
 end

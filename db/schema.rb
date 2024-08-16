@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_15_112355) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_16_090900) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_112355) do
     t.bigint "emoji_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "price_booking"
     t.index ["emoji_id"], name: "index_bookings_on_emoji_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
