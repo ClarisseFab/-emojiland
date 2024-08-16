@@ -6,21 +6,24 @@
   font-family: "RocknRoll One", sans-serif;
   color: #2A0C01;
   padding: 8px;
-  border : 1.5px solid white;
+  border: 1.5px solid white;
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border: white 1px solid;
 }
