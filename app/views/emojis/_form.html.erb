@@ -10,11 +10,21 @@
     <%= f.input :picture, as: :file %>
     <%= f.label :categories %>
     <div class="ok">
-      <%= f.input :categories, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]}, class: "checkbox-inline", label: '' %>
+
+      <%# <%= f.input :category_ids, as: :check_boxes, collection: Category.all, class: "checkbox-inline", label: '' %>
+
+      <%= f.input :category_ids, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]}, class: "checkbox-inline", label: '' %>
+
     </div>
   </div>
 
   <div class="form-actions">
+
     <%= f.button :submit, 'Create my super emoji!', :class => "button_submit_form_emoji" %>
   </div>
 <% end %>
+
+
+      <%# <%= f.input :category_ids, as: :check_boxes, collection: Category.all, class: "checkbox-inline", label: '' %>
+
+      <%# <%= f.input :categories, as: :check_boxes, collection: Category.all.map {|category| [category.name, category.id]}, class: "checkbox-inline", label: '' %> %> %>
