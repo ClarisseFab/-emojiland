@@ -2,13 +2,13 @@ class Emoji < ApplicationRecord
 #  has_many :users, through: :emoji_bookings, source: :user
 
   has_many :emoji_categories
-  has_many :categories, through: :emoji_categories, source: :category
+  has_many :categories, through: :emoji_categories, source: :category, dependent: :destroy
+  # dependent: :destroy permet de détruire les traces de emojis sur la table de jointures sinon delete bug
 
 
-
-  acts_as_taggable_on :tags
-  # acts_as_taggable_on :skills, :interests
-  #You can also configure multiple tag types per model
+  # acts_as_taggable_on :tags
+  # # acts_as_taggable_on :skills, :interests
+  # #You can also configure multiple tag types per model
 
 
   belongs_to :user

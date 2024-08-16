@@ -1,9 +1,11 @@
 <div class="text-center d-flex justify-content-center">
     <h1 class="card-title my-5 col-11">My emojis</h1>
-  </div>
+</div>
 
 <br>
-<%= render partial: "emojis/category" %>
+<div class="custom-select row justify-content-md-center" >
+  <%= render partial: "emojis/category" %>
+</div>
 <br>
 
 
@@ -17,18 +19,36 @@
           <div class="cnt">
             <%= render emoji %>
           </div>
-          <div id="card-hover">
-            <div class="btn-orange my-4">
-              <%= link_to "Update emoji", edit_emoji_path(emoji), class:"textDark text-decoration-none"  %>
-            </div>
-            <div class="btn-orange my-4">
-              <%= button_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
-            </div>
+
+         <div id="card-hover">
+          <div class="btn-orange">
+            <%= link_to "Update emoji", edit_emoji_path(emoji), class:"textDark text-decoration-none"  %>
           </div>
-        </div>
-      <% end %>
-    </div>
+          
+         <%# bouton original %>
+         <%# <div class="btn-orange">
+           <%= button_to "Delete emoji", emoji, method: :delete, class:"textDark text-decoration-none" %>
+         <%# </div> %>
+
+          <div >
+            <%= button_to "Delete emoji", emoji, method: :delete, class:"text-dark text-decoration-none btn btn-link btn-orange" %>
+            <%# btn btn-link => btn qui ressemble à un link %>
+            <%# btn-orange => descendu et delete dans la div = bonne taille %>
+            <%# text-dark plutot que textDark => sinon bleu... me demande pas pk %>
+            <%# mais problème de blinking qd hover.... %>
+          </div>
+           
+      </div>
+    <% end %>
   </div>
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +76,7 @@
     <strong>Categories:</strong>
     <%= emoji.categories.map(&:name).join(" ") %>
   <%# </p> %>
+
 
 <%# mettre image ici %>
   <%# <p> %>
