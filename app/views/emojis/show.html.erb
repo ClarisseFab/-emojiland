@@ -1,10 +1,8 @@
 
 
 <div class="container" data-controller="datepicker">
-  <div class="d-flex justify-content-between mb-5 mt-5">
-    <%= link_to "< Back to all", emojis_path, class:"btn-orange text-decoration-none pt-3" %>
-    <h1 id="orange-title">Book your emoji</h1>
-    <div></div>
+  <div class="text-center d-flex justify-content-center">
+    <h1 class="card-title my-5 col-11">Book your emoji</h1>
   </div>
   <div class="d-flex justify-content-center align-items-center">
   <%# card de details de l'emoji %>
@@ -26,30 +24,45 @@
 
       </div>
     </div>
+      <% if user_signed_in? %>
+        <%# card de réservation quand l'utilisateur est connecté%>
+        <div class ="booking-card d-flex flex-column align-items-center">
 
-    <%# card de réservation %>
-    <div class ="booking-card d-flex flex-column align-items-center">
-      <h3>Book this emoji</h3>
-      <p class="lign-white">----------------</p>
+        <h3>Book this emoji</h3>
+        <p class="lign-white">----------------</p>
 
-      <%= simple_form_for [@emoji, @booking] do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= simple_form_for [@emoji, @booking] do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <div class="form-inputs">
-          <%= f.input :date_start_on,
-                      label: 'Select the dates',
-                      as: :string,
-                      input_html: {data: {datepicker_target: "calendar"}}
-                      %>
-        </div>
-        <p id="lign-center" class="lign-white">----------------</p>
-        <p data-datepicker-target="price"> </p>
-        <div class="form-actions">
-          <%= f.submit 'I want it !', :class => 'btn-submit' %>
+          <div class="form-inputs">
+            <%= f.input :date_start_on,
+                        label: 'Select the dates',
+                        as: :string,
+                        input_html: {data: {datepicker_target: "calendar"}}
+                        %>
+          </div>
+          <p id="lign-center" class="lign-white">----------------</p>
+          <p data-datepicker-target="price"> </p>
+          <div class="form-actions">
+            <%= f.submit 'I want it !',
+                        :class => 'btn-white'%>
+          </div>
+        <% end %>
+      <% else %>
+          <%# card booking hors connexion%>
+          <div class="card-logout d-flex flex-column align-items-center">
+            <p id="card-title">Vous n'êtes pas connecté ! 😱</p>
+            <p>You can’t book</p>
+            <p id="lign-center" class="lign-white">----------------</p>
+            <%= link_to "Login", user_session_path, class:"btn-login text-decoration-none" %>
         </div>
       <% end %>
-
     </div>
+
   </div>
+  <div id="div-btn" class="d-flex align-items-center mt-5">
+      <%= link_to "< Back to all", emojis_path, class:"btn-orange text-decoration-none ms-3 pt-3" %>
+  </div>
+
 </div>
