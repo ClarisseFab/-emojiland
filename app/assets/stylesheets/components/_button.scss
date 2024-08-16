@@ -7,9 +7,20 @@
   width: 182px;
   text-align: center;
   padding: 8px 0px;
+  text-decoration: none;
 
   &:hover {
     background: $orange-dark;
     transition-duration: 0.5s;
   }
+}
+
+.btn{
+  margin: 0px;
+  padding: 8px 0px;
+  &:hover {
+    padding: 08px 0px;
+    color: $text-dark !important;
+    text-decoration: none;
+    }
 }
