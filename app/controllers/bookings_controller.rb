@@ -30,7 +30,10 @@ class BookingsController < ApplicationController
                   )
                   # Je supprime tout les bookings en double (.uniq)
                   .distinct
+                  category = Category.find params[:category]
     end
+
+    @current_category = category
   end
 
   def new
