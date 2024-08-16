@@ -29,7 +29,7 @@ class EmojisController < ApplicationController
   # POST /emojis or /emojis.json
   def create
     @emoji = Emoji.new(emoji_params)
-    params[:emoji][:categories].each do |category_id|
+    params[:emoji][:category_ids].each do |category_id|
       if Category.exists? category_id
         category = Category.find category_id
         @emoji.categories << category
@@ -57,6 +57,15 @@ class EmojisController < ApplicationController
 
   # PATCH/PUT /emojis/1 or /emojis/1.json
   def update
+   @emoji.categories.destroy_all
+    params[:emoji][:category_ids].each do |category_id|
+      if Category.exists? category_id
+        category = Category.find category_id
+        @emoji.categories << category
+      end
+    end
+
+
     respond_to do |format|
       if @emoji.update(emoji_params)
         format.html { redirect_to my_emojis_url, notice: "Emoji was successfully updated." }
