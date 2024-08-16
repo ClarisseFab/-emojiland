@@ -1,7 +1,8 @@
+<div class="d-flex flex-column justify-content-center">
 
-<h1>My Bookings</h1>
-<p>Tous mes bookings en cours</p>
-
+  <div class="text-center d-flex justify-content-center">
+    <h1 class="card-title my-5 col-11">My bookings</h1>
+  </div>
 
 <br>
 <div class="custom-select row justify-content-md-center" >
@@ -9,28 +10,47 @@
 </div>
 <br>
 
-<% @bookings.each do |booking| %>
-  <p>
-    <strong>Name:</strong>
-    <%= booking.emoji.name %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= booking.emoji.description %>
-  </p>
-  <p>
-    <strong>Price:</strong>
-    <%= (booking.emoji.price * (booking.date_end_on - booking.date_start_on)).round(2) %>
-  </p>
+  <div>
+    <div id="emojis" class="d-flex f-wrap justify-content-center">
 
-  <% if booking.emoji.picture.attached? %>
-    <%= cl_image_tag booking.emoji.picture.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <p>
-  <strong>Period:</strong>
-    <%= booking.date_start_on%>
-    <%= booking.date_end_on%>
-  </p>
-  <%= button_to "Supprimer mon booking", booking, method: :delete %>
-<% end %>
+
+      <% @bookings.each do |booking| %>
+        <div class="card-h m-3 p-0">
+          <div class="cnt">
+
+
+
+  <div class="card p-0">
+
+        <div id="card-top" class="d-flex justify-content-center">
+          <p><% if booking.emoji.picture.attached? %>
+              <%= cl_image_tag booking.emoji.picture.key, height: 220, width: 220, crop: :fill, class:"card-image"%>
+          <% end %></p>
+        </div>
+
+        <div id="card-bottom" class="my-0">
+          <h2><strong><%= booking.emoji.name.capitalize %></strong></h2>
+          <p>Book start : <%= booking.date_start_on%></p>
+          <p>Book end : <%= booking.date_end_on%></p>
+          <div class="d-flex justify-content-center align-items-end p-0">
+            <div id="card-price">
+              <strong><%= booking.price_booking%><%= "€" %></strong>
+            </div>
+          </div>
+        </div>
+    <%# <div id="card-hover" >
+      <%= link_to "Show this emoji", emoji, class:"btn btn-warning"%>
+    <%# </div> %>
+  </div>
+
+          </div>
+          <div id="card-hover">
+            <%= button_to "Delete booking", booking, method: :delete, class:"text-dark text-decoration-none btn btn-link btn-orange" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
